@@ -1,0 +1,33 @@
+EXCEL MACRO CLEANER — PRO VERSION (DEEP CLEANING)
+===================================================
+
+CÁCH DÙNG:
+1. Đảm bảo 2 file Fix_Macro_XLSM.bat và Fix_Macro_XLSM.ps1 nằm trong cùng một thư mục.
+2. Bấm đúp vào file Fix_Macro_XLSM.bat để khởi chạy.
+3. Khi hộp thoại hiện ra, hãy chọn thư mục gốc chứa các file Excel .xlsm cần xử lý.
+   (Công cụ sẽ tự động quét sâu vào tất cả các thư mục con bên trong).
+4. Tính năng mới - Quét liên tục (Loop): 
+   - Sau khi xử lý xong một phân vùng, hoặc nếu không tìm thấy file nào, tool sẽ tự động hỏi bạn có muốn quét tiếp ở vùng khác không.
+   - Gõ Y (Yes) và nhấn Enter để tiếp tục bật hộp thoại chọn ổ đĩa/thư mục mới.
+   - Gõ N (No) và nhấn Enter để thoát hoàn toàn.
+
+TÍNH NĂNG VƯỢT TRỘI (BẢN PRO):
+- Quét Liên Hoàn: Không cần tắt bật lại tool nhiều lần, hỗ trợ anh em kỹ thuật viên rà soát toàn bộ các ổ đĩa trên máy tính khách hàng chỉ trong 1 lần chạy.
+- Xử lý XML DOM Chuẩn Mực: Can thiệp và dọn dẹp mã độc/VBA bằng thuật toán phân tích cấu trúc XML gốc của Microsoft. Giữ nguyên 100% định dạng, màu sắc, và công thức (formulas) của bảng tính.
+- Vượt Rào Giới Hạn Đường Dẫn: Sử dụng API .NET gốc để xử lý mượt mà các file nằm ẩn sâu hàng chục lớp thư mục.
+- Lọc Thư Mục Thông Minh: Nhận diện chính xác thư mục sao lưu "BACKUP", không chặn nhầm các thư mục dữ liệu công việc.
+
+PHẠM VI XỬ LÝ:
+- CHỈ xử lý file có đuôi .xlsm (Excel Macro-Enabled Workbook).
+- Bỏ qua tuyệt đối các định dạng khác (.xlsx, .xls, .xlsb, .csv...) để đảm bảo an toàn hệ thống.
+- Làm sạch file .xlsm và xuất ra định dạng chuẩn .xlsx.
+- Xóa tận gốc các thành phần VBA (thường nằm trong thư mục xl/vbaProject.bin) và dọn dẹp các mối liên kết (Relationships) độc hại.
+
+SAO LƯU VÀ AN TOÀN DỮ LIỆU (FAIL-SAFE):
+- KHÔNG GHI ĐÈ: Nếu file .xlsx đích đã tồn tại, công cụ sẽ tự động bỏ qua để bảo vệ dữ liệu cũ.
+- TỰ ĐỘNG BACKUP: Bản gốc .xlsm luôn được copy vào thư mục "BACKUP" (nằm ngay cạnh file gốc) trước khi can thiệp. Hỗ trợ tự động thêm ngày giờ (Timestamp) nếu trùng tên.
+- XỬ LÝ TRÊN FILE TẠM: Quá trình bóc tách mã độc được thực hiện trên file ảo, bảo vệ tuyệt đối file gốc nếu quá trình gặp sự cố ngoài ý muốn.
+
+LƯU Ý QUAN TRỌNG:
+- Cần ĐÓNG phần mềm Microsoft Excel trước khi chạy để tránh tình trạng file bị khóa (File in use).
+- Không đặt tên thư mục làm việc (thư mục chứa dữ liệu chính) là "BACKUP" (viết hoa toàn bộ), vì tool sẽ hiểu lầm đó là thư mục sao lưu và bỏ qua.

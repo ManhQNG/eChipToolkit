@@ -1,0 +1,30 @@
+WORD MACRO CLEANER — PRO VERSION (DEEP CLEANING)
+===================================================
+
+CÁCH DÙNG:
+1. Đảm bảo 2 file Fix_Macro_DOCM.bat và Fix_Macro_DOCM.ps1 nằm trong cùng một thư mục.
+2. Bấm đúp vào file Fix_Macro_DOCM.bat để khởi chạy.
+3. Khi hộp thoại hiện ra, hãy chọn thư mục gốc đang chứa các file Word .docm cần xử lý.
+   (Công cụ sẽ tự động quét sâu vào tất cả các thư mục con bên trong).
+4. Chờ tiến trình chạy xong, xem bảng tổng kết và nhấn Enter để đóng cửa sổ.
+
+TÍNH NĂNG VƯỢT TRỘI (BẢN PRO):
+- Xử lý XML DOM Chuẩn Mực: Can thiệp và dọn dẹp mã độc/VBA bằng thuật toán phân tích cấu trúc XML gốc của Microsoft. Loại bỏ hoàn toàn rủi ro lỗi file (Corrupt File) sau khi chuyển đổi.
+- Vượt Rào Giới Hạn Đường Dẫn: Sử dụng API .NET gốc để xử lý mượt mà các file nằm ẩn sâu hàng chục lớp thư mục (vượt qua giới hạn 260 ký tự mặc định của Windows).
+- Lọc Thư Mục Thông Minh: Thuật toán nhận diện chính xác thư mục sao lưu, không bỏ sót nhầm các thư mục dữ liệu công việc có chứa từ khóa "backup".
+
+PHẠM VI XỬ LÝ:
+- CHỈ xử lý file có đuôi .docm.
+- Bỏ qua tuyệt đối các định dạng khác (.docx, .doc, .dotm, PDF...) để đảm bảo an toàn hệ thống.
+- Làm sạch file .docm và xuất ra định dạng chuẩn .docx.
+- Xóa tận gốc các thành phần VBA (vbaProject.bin, vbaData.xml) và dọn dẹp các mối liên kết (Relationships) độc hại.
+- Giữ nguyên customXml/customUI để bảo toàn toàn vẹn dữ liệu định dạng của văn bản.
+
+SAO LƯU VÀ AN TOÀN DỮ LIỆU (FAIL-SAFE):
+- KHÔNG GHI ĐÈ: Nếu file .docx đích đã tồn tại, công cụ sẽ tự động bỏ qua để bảo vệ dữ liệu cũ.
+- TỰ ĐỘNG BACKUP: Bản gốc .docm luôn được copy vào thư mục "BACKUP" (nằm ngay cạnh file gốc) trước khi có bất kỳ sự can thiệp nào. Nếu có file trùng tên, tool tự động thêm ngày giờ (Timestamp) vào tên file backup.
+- XỬ LÝ TRÊN FILE TẠM: Quá trình bóc tách mã độc được thực hiện trên file ảo, chỉ khi thành công 100% mới xuất ra file .docx. Nếu có lỗi, file gốc của bạn vẫn hoàn toàn nguyên vẹn.
+
+LƯU Ý QUAN TRỌNG:
+- Nên đóng phần mềm Microsoft Word trước khi chạy để tránh tình trạng file bị khóa (File in use).
+- Không được đặt tên thư mục làm việc (thư mục chứa dữ liệu chính) là "BACKUP" (viết hoa toàn bộ), vì tool sẽ hiểu lầm đó là thư mục sao lưu và bỏ qua nó.
